@@ -13,6 +13,8 @@ COPY to_be_installed /to_be_installed
 RUN dnf update -y && \
     dnf install -y $(</to_be_installed) && \
     dnf clean all && \
+    ln -s /usr/bin/flatpak-xdg-open /usr/bin/xdg-open && \
+    ln -s /usr/bin/flatpak-xdg-email /usr/bin/xdg-email && \
     rm /to_be_installed
 
 # krb5 configuration for cc.in2p3.fr

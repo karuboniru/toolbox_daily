@@ -61,3 +61,4 @@ voms-clients-cpp
 pythia8-devel
 dia
 rclone
+flatpak-xdg-utils
