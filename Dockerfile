@@ -1,5 +1,6 @@
 ARG NAME=fedora-toolbox
 ARG VERSION=39
+FROM registry.fedoraproject.org/fedora-toolbox:$VERSION
 LABEL com.github.containers.toolbox="true" \
       com.redhat.component="$NAME" \
       name="$NAME" \
@@ -7,9 +8,7 @@ LABEL com.github.containers.toolbox="true" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Modified version of fedora toolbox" \
       maintainer="Debarshi Ray <rishi@fedoraproject.org>"
-
-FROM registry.fedoraproject.org/fedora-toolbox:$VERSION
-
+      
 # install packages from to_be_installed
 RUN dnf update -y && \
     dnf install -y $(<to_be_installed) && \
