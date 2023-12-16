@@ -6,9 +6,11 @@ LABEL com.github.containers.toolbox="true" \
       name="$NAME" \
       version="$VERSION" \
       usage="This image is meant to be used with the toolbox command" \
-      summary="Modified version of fedora toolbox" \
-      maintainer="Debarshi Ray <rishi@fedoraproject.org>"
+      summary="Modified version of fedora toolbox for personal daily use" \
+      maintainer="Qiyu Yan <yanqiyu01@gmail.com>"
+
 COPY to_be_installed /to_be_installed
+
 # install packages from to_be_installed
 RUN dnf update -y && \
     dnf install -y $(</to_be_installed) && \
