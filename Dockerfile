@@ -23,6 +23,8 @@ RUN dnf update -y && \
     ln -s /usr/bin/flatpak-xdg-open /usr/bin/xdg-open && \
     ln -s /usr/bin/flatpak-xdg-email /usr/bin/xdg-email && \
     rm /to_be_installed && rm /genie_build_dep
+# for some legacy application, ROOTSYS is set to /usr
+ENV ROOTSYS=/usr
 
 # krb5 configuration for cc.in2p3.fr
 COPY CC_IN2P3_FR /etc/krb5.conf.d/CC_IN2P3_FR
