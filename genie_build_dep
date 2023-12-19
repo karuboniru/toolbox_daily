@@ -1,0 +1,8 @@
+root-montecarlo-pythia6
+root
+root-genvector
+root-smatrix
+root-geom
+libxml2-devel
+pythia6-devel
+log4cpp-devel
