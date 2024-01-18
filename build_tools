@@ -1,0 +1,14 @@
+libasan
+binwalk
+valgrind
+/usr/include/eigen3
+json-devel
+strace
+clang-tools-extra
+bear
+patch
+ninja-build
+cmake
+gcc
+gcc-c++
+meson
