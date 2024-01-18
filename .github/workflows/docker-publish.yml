@@ -7,7 +7,7 @@ name: Docker
 
 on:
   schedule:
-    - cron: '19 5 * * *'
+    - cron: '30 5 * * *'
   push:
     branches: [ '*' ]
     # Publish semver tags as releases.
@@ -20,7 +20,6 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
-
 
 jobs:
   build:
@@ -79,8 +78,9 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # disable cache to build every package in latest version
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
