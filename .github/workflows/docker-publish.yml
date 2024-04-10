@@ -36,13 +36,18 @@ jobs:
           tag: ${{ github.ref_name }}
           composefile: container.yaml
         run: |
-          dnf -y install rpm-ostree skopeo selinux-policy-targeted
+          set -eux
+          dnf -y install rpm-ostree skopeo selinux-policy-targeted podman buildah
           skopeo login -u $username -p $password $registry
           mkdir -p repo cache
           ostree init --repo=repo --mode=archive
-          rpm-ostree compose image --initialize-mode=if-not-exists \
-            --format registry --layer-repo repo --cachedir=cache \
-            --label com.github.containers.toolbox=true \
-            $composefile \
-            $registry/$image:$tag
+          rpm-ostree compose tree --unified-core \
+            --repo=repo --cachedir=cache \
+            $composefile
+          rpm-ostree compose container-encapsulate \
+            --repo=repo --cmd /bin/bash --max-layers 8 \
+            container containers-storage:build_tmp
+          podman push --force-compression --compression-format zstd:chunked \
+            containers-storage:build_tmp $registry/$image:$tag
+
             

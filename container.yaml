@@ -2,6 +2,8 @@ releasever: 40
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
 mutate-os-release: "${releasever}"
 
+ref: "container"
+
 include:
   - basesystem.yaml
   - extra-packages.yaml
