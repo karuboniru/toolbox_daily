@@ -1,0 +1,40 @@
+releasever: 40
+automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
+mutate-os-release: "${releasever}"
+
+include:
+  - basesystem.yaml
+  - extra-packages.yaml
+  - neutrino_build_dep.yaml
+  - packaging_tools.yaml
+  - toolkit.yaml
+  - build_tools.yaml
+
+container-cmd:
+  - /bin/bash
+
+repos:
+  - fedora-40
+  - fedora-40-updates
+  - fedora-40-updates-testing
+  - pythia6
+
+container: true
+documentation: true
+
+etc-group-members:
+  - wheel
+
+ignore-removed-users:
+  - root
+ignore-removed-groups:
+  - root
+
+postprocess:
+  - |
+    #!/usr/bin/env bash
+    set -xeuo pipefail
+    ln -sf /usr/bin/flatpak-xdg-open /usr/bin/xdg-open 
+    ln -sf /usr/bin/flatpak-xdg-email /usr/bin/xdg-email
+
+add-files: [["CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"]]

@@ -1,0 +1,21 @@
+packages:
+  - fedora-release
+  - glibc
+  - glibc-langpack-en
+  - iputils
+  - less
+  - bash
+  - ncurses
+  - sudo
+  - util-linux
+  - dnf
+  - glibc-all-langpacks
+  - nss-altfiles
+  - rpm-ostree
+  - iputils
+  - iproute
+  - less
+  - htop
+  - procps-ng
+  - vim-default-editor
+  - shadow-utils

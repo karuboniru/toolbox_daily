@@ -1,0 +1,15 @@
+packages:
+  - libasan
+  - binwalk
+  - valgrind
+  - eigen3-devel
+  - json-devel
+  - strace
+  - clang-tools-extra
+  - bear
+  - patch
+  - ninja-build
+  - cmake
+  - gcc
+  - gcc-c++
+  - meson

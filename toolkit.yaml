@@ -1,0 +1,19 @@
+packages:
+  - nmap
+  - git-email
+  - xlsclients
+  - htop
+  - iperf3
+  - systemd-udev
+  - jq
+  - gdb
+  - flatpak-xdg-utils
+  - pandoc
+  - rclone
+  - tpm2-pkcs11
+  - wireguard-tools
+  - xrootd-client
+  - xrootd-voms
+  - root-netx
+  - dia
+  - zsh

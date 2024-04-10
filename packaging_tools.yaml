@@ -1,0 +1,4 @@
+packages:
+  - koji
+  - fedpkg
+  - copr-cli
