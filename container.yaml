@@ -1,4 +1,4 @@
-releasever: 40
+releasever: 41
 automatic-version-prefix: "${releasever}.<date:%Y%m%d>"
 mutate-os-release: "${releasever}"
 
@@ -16,9 +16,9 @@ container-cmd:
   - /bin/bash
 
 repos:
-  - fedora-40
-  - fedora-40-updates
-  - fedora-40-updates-testing
+  - fedora-41
+  - fedora-41-updates
+  - fedora-41-updates-testing
   - pythia6
 
 container: true
