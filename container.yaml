@@ -39,4 +39,8 @@ postprocess:
     ln -sf /usr/bin/flatpak-xdg-open /usr/bin/xdg-open 
     ln -sf /usr/bin/flatpak-xdg-email /usr/bin/xdg-email
 
-add-files: [["CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"]]
+add-files:
+  [
+    ["CC_IN2P3_FR", "/etc/krb5.conf.d/CC_IN2P3_FR"],
+    ["IHEP_AC_CN", "/etc/krb5.conf.d/IHEP_AC_CN"],
+  ]

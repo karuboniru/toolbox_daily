@@ -12,4 +12,6 @@ packages:
   - cmake
   - gcc
   - gcc-c++
+  - clang
+  - llvm 
   - meson
