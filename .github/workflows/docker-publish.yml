@@ -38,6 +38,7 @@ jobs:
         run: |
           set -eux
           dnf -y install rpm-ostree skopeo selinux-policy-targeted podman buildah /usr/bin/fuse-overlayfs
+          cp /usr/share/containers/storage.conf /etc/containers/storage.conf
           sed -i 's/#mount_program/mount_program/' /etc/containers/storage.conf
           skopeo login -u $username -p $password $registry
           mkdir -p repo cache
